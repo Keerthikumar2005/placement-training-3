@@ -1,0 +1,18 @@
+arr = list(map(int, input("Enter sorted list: ").split()))
+key = int(input("Enter search element: "))
+
+low = 0
+high = len(arr) - 1
+found = False
+
+while low <= high:
+    mid = (low + high) // 2
+    if arr[mid] == key:
+        found = True
+        break
+    elif key < arr[mid]:
+        high = mid - 1
+    else:
+        low = mid + 1
+
+print("Found" if found else "Not Found")
